@@ -12,6 +12,8 @@ let trafficChart = new Chart(traffic, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [{
         ticks: {
@@ -34,6 +36,8 @@ let dailyTrafficChart = new Chart(dailyTraffic, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [{
         ticks: {
@@ -56,6 +60,8 @@ let mobileUsersChart = new Chart(mobileUsers, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [{
         ticks: {

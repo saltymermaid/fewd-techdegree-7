@@ -357,12 +357,6 @@ template {
   font-family: "Lato", sans-serif;
 }
 
-body {
-  display: grid;
-  grid-template-rows: 50px 500px 500px 500px;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-}
-
 /* ============================================= */
 /*              Buttons                          */
 /* ============================================= */
@@ -370,14 +364,73 @@ body {
 /*              Grid System                      */
 /* ============================================= */
 body {
+  width: 100%;
   display: grid;
-  grid-template-rows: 50px auto;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: 50px;
+  grid-template-columns: 1fr 19fr;
+  grid-template-areas: "top top" "nav main";
+}
+
+nav {
+  grid-area: nav;
+}
+
+.top-bar {
+  grid-area: top;
 }
 
 main {
-  grid-row: 2/3;
-  grid-column: 2/-1;
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "alert alert" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+}
+
+.alert {
+  grid-area: alert;
+}
+
+#traffic-div {
+  grid-area: traffic;
+}
+
+#daily-div {
+  grid-area: daily;
+}
+
+#mobile-div {
+  grid-area: mobile;
+}
+
+#social {
+  grid-area: social;
+  color: white;
+  background-color: #D29506;
+}
+
+#new-members {
+  grid-area: members;
+  color: white;
+  background-color: #55414A;
+}
+
+#recent-activity {
+  grid-area: recent;
+  color: white;
+  background-color: #CF8DAB;
+}
+
+#message-user {
+  grid-area: message;
+  color: white;
+  background-color: #FFE4F8;
+}
+
+#settings {
+  grid-area: settings;
+  color: white;
+  background-color: #D29506;
 }
 
 /* ============================================= */
@@ -461,9 +514,8 @@ nav {
   margin-right: auto;
 }
 
-#traffic {
-  grid-row: 3/4;
-  grid-column: 2/-1;
+.traffic-div {
+  height: 250px;
 }
 
 /* ============================================= */

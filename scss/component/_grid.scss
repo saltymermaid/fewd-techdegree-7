@@ -3,13 +3,83 @@
 /* ============================================= */
 
 body {
+  width: 100%;
   display: grid;
-  grid-template-rows: 50px auto;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: 50px;
+  grid-template-columns: 1fr 19fr;
+  grid-template-areas: 
+    "top top"
+    "nav main";
+}
+
+nav {
+  grid-area: nav;
+}
+
+.top-bar {
+  grid-area: top;
 }
 
 main {
-  grid-row: 2 / 3;
-  grid-column: 2 / -1;
+  grid-area: main;
+  // width: 100%;
+  // grid-row: 2 / 3;
+  // grid-column: 2 / -1;
+  display: grid;
+  // height: 100vh;
+  grid-template-rows: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "alert alert"
+    "traffic traffic"
+    "daily mobile"
+    "social social"
+    "members recent"
+    "message settings";
 }
 
+.alert {
+  grid-area: alert;
+}
+
+#traffic-div {
+  grid-area: traffic;
+}
+
+#daily-div {
+  grid-area: daily;
+}
+
+#mobile-div {
+  grid-area: mobile;
+}
+
+#social {
+  grid-area: social;
+  color: $light;
+  background-color: $accent-one;
+}
+
+#new-members {
+  grid-area: members;
+  color: $light;
+  background-color: $accent-two;
+}
+
+#recent-activity {
+  grid-area: recent;
+  color: $light;
+  background-color: $main;
+}
+
+#message-user {
+  grid-area: message;
+  color: $light;
+  background-color: $main-light;
+}
+
+#settings {
+  grid-area: settings;
+  color: $light;
+  background-color: $accent-one;
+}
