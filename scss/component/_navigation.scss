@@ -1,0 +1,70 @@
+/* ============================================= */
+/*              Navigation                       */
+/* ============================================= */
+
+
+/* Top Bar */
+
+header {
+  grid-column: 1 / -1;
+  width: 100%;
+  background: $main;
+  min-height: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.logo strong {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  font-size: $font-size-large;
+  display: block;
+  margin-right: auto;
+  color: $light;
+}
+
+.top-bar li {
+  padding: 5px 10px 10px 10px;
+}
+
+.notification:hover {
+  transform: scale(1.2)
+}
+
+.profile-image img {
+  border-radius: 50%;
+}
+
+nav {
+  grid-row: 2 / -1;
+  grid-column: 1 / 2;
+  background: $main-dark;
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-icons {
+  height: auto;
+  width: auto;
+}
