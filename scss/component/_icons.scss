@@ -1,0 +1,23 @@
+#notification {
+  height: 35px;
+  width: 35px;
+  transition: transform .3s ease-out;
+}
+
+#notification:hover {
+  animation: ding .5s ease-out;
+  transform: rotate(-15deg)
+}
+
+path {
+  fill: $main-light;
+}
+
+.nav-icons {
+  height: 25px;
+  width: 25px;
+}
+
+svg {
+  width: 70%;
+}

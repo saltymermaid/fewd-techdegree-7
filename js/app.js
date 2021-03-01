@@ -8,7 +8,6 @@ let trafficChart = new Chart(traffic, {
       data: [500, 1000, 600, 1250, 1750, 1100, 1500, 1000, 1500, 2000, 1500, 2000],
       // backgroundColor: '#CA2085',
       lineTension: 0,
-      fill: false,
     }]
   },
   options: {
@@ -17,7 +16,9 @@ let trafficChart = new Chart(traffic, {
     scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          maxTicksLimit: 6,
+          suggestedMax: 2500,
         }
       }]
     }
@@ -41,7 +42,9 @@ let dailyTrafficChart = new Chart(dailyTraffic, {
     scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          maxTicksLimit: 7,
+          suggestedMax: 250,
         }
       }]
     }
@@ -52,10 +55,10 @@ let mobileUsers = document.getElementById('mobile-users').getContext('2d');
 let mobileUsersChart = new Chart(mobileUsers, {
   type: 'doughnut',
   data: {
-    labels: ['Desktop', 'Phones', 'Tablets'],
+    labels: ['Tablets', 'Phones', 'Desktop'],
     datasets: [{
       label: 'Mobile Users',
-      data: [70, 15, 15],
+      data: [15, 15, 70],
       // backgroundColor: ['#CA2085', '#D29506', '#55414A'],
     }]
   },

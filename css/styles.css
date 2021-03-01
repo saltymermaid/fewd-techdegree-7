@@ -353,13 +353,52 @@ template {
 /* ============================================= */
 /*              Base styles                      */
 /* ============================================= */
-* {
-  font-family: "Lato", sans-serif;
+html {
+  max-width: 768px;
+  margin: auto;
+}
+
+#notification {
+  height: 35px;
+  width: 35px;
+  transition: transform 0.3s ease-out;
+}
+
+#notification:hover {
+  animation: ding 0.5s ease-out;
+  transform: rotate(-15deg);
+}
+
+path {
+  fill: #FFE4F8;
+}
+
+.nav-icons {
+  height: 25px;
+  width: 25px;
+}
+
+svg {
+  width: 70%;
 }
 
 /* ============================================= */
 /*              Buttons                          */
 /* ============================================= */
+@keyframes ding {
+  0% {
+    transform: rotate(15deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+}
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
@@ -473,17 +512,11 @@ header {
   padding: 5px 10px 10px 10px;
 }
 
-.notification:hover {
-  transform: scale(1.2);
-}
-
 .profile-image img {
   border-radius: 50%;
 }
 
 nav {
-  grid-row: 2/-1;
-  grid-column: 1/2;
   background: #CA2085;
   padding: 10px;
 }
@@ -494,11 +527,6 @@ nav {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-}
-
-.nav-icons {
-  height: auto;
-  width: auto;
 }
 
 .alert {

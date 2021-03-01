@@ -41,17 +41,11 @@ header {
   padding: 5px 10px 10px 10px;
 }
 
-.notification:hover {
-  transform: scale(1.2)
-}
-
 .profile-image img {
   border-radius: 50%;
 }
 
 nav {
-  grid-row: 2 / -1;
-  grid-column: 1 / 2;
   background: $main-dark;
   padding: 10px;
 }
@@ -62,9 +56,4 @@ nav {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-}
-
-.nav-icons {
-  height: auto;
-  width: auto;
 }
