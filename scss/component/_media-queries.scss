@@ -1,6 +1,21 @@
 /* ============================================= */
 /*              Media Queries                    */
 /* ============================================= */
-@media (min-width: $screen-break) {
-  
+
+@media screen and (min-width: $screen-break) {
+  body {
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 19fr;
+    grid-template-areas: 
+      "top top"
+      "nav main";
   }
+
+  nav li svg {
+    height: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+}

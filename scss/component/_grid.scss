@@ -3,13 +3,14 @@
 /* ============================================= */
 
 body {
-  width: 100%;
+  width: 90vw;
+  margin: auto;
   display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: 1fr 19fr;
+  grid-template-rows: 50px 50px;
   grid-template-areas: 
     "top top"
-    "nav main";
+    "nav nav"
+    "main main";
 }
 
 nav {
@@ -130,4 +131,3 @@ main {
   color: $light;
   background-color: $accent-one;
 }
-

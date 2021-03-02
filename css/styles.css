@@ -373,7 +373,7 @@ h1 {
 /*              Base styles                      */
 /* ============================================= */
 html {
-  width: 90%;
+  width: 90vw;
   max-width: 1000px;
   margin: auto;
 }
@@ -403,7 +403,7 @@ path {
 }
 
 nav li svg {
-  width: 100%;
+  width: 35px;
 }
 
 .widget svg path {
@@ -433,11 +433,11 @@ nav li svg {
 /*              Grid System                      */
 /* ============================================= */
 body {
-  width: 100%;
+  width: 90vw;
+  margin: auto;
   display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: 1fr 19fr;
-  grid-template-areas: "top top" "nav main";
+  grid-template-rows: 50px 50px;
+  grid-template-areas: "top top" "nav nav" "main main";
 }
 
 nav {
@@ -556,7 +556,6 @@ main {
 /* Top Bar */
 header {
   grid-column: 1/-1;
-  width: 100%;
   background: #CF8DAB;
   min-height: 30px;
   padding: 10px;
@@ -601,7 +600,6 @@ nav {
 
 .nav {
   display: flex;
-  flex-direction: column;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
@@ -639,5 +637,20 @@ nav {
 /* ============================================= */
 /*              Media Queries                    */
 /* ============================================= */
+@media screen and (min-width: 768px) {
+  body {
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 19fr;
+    grid-template-areas: "top top" "nav main";
+  }
+
+  nav li svg {
+    height: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

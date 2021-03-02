@@ -7,7 +7,7 @@
 
 header {
   grid-column: 1 / -1;
-  width: 100%;
+  // width: 100%;
   background: $main;
   min-height: 30px;
   padding: 10px;
@@ -52,7 +52,6 @@ nav {
 
 .nav {
   display: flex;
-  flex-direction: column;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;

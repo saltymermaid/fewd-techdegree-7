@@ -1,5 +1,14 @@
 let alert = document.querySelector('#alert');
 let banner = document.createElement('div');
+let navBar = document.querySelector('.main-nav');
+let colors = {
+  main: '#CF8DAB',
+  mainTrans: 'rgba(207, 141, 171, 0.5)',
+  mainDark: '#CA2085',
+  mainLight: '#FFE4F8',
+  accentOne: '#D29506',
+  accentTwo: '#55414A'
+}
 function makeAlert() {
   banner.setAttribute('class', 'alert-banner');
   let alertText = document.createElement('p');
@@ -55,12 +64,15 @@ let trafficChart = new Chart(traffic, {
     datasets: [{
       label: 'Traffic',
       data: trafficData.data,
-      // backgroundColor: '#CA2085',
+      backgroundColor: colors.mainTrans,
       lineTension: 0,
     }]
   },
   options: {
     aspectRatio: 4.5,
+    animation: {
+      duration: 0
+    },
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -83,10 +95,13 @@ let dailyTrafficChart = new Chart(dailyTraffic, {
     datasets: [{
       label: 'Daily Traffic',
       data: [50, 75, 150, 100, 200, 175, 75],
-      // backgroundColor: '#CA2085',
+      backgroundColor: colors.mainDark,
     }]
   },
   options: {
+    animation: {
+      duration: 0
+    },
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -109,16 +124,24 @@ let mobileUsersChart = new Chart(mobileUsers, {
     datasets: [{
       label: 'Mobile Users',
       data: [15, 15, 70],
-      // backgroundColor: ['#CA2085', '#D29506', '#55414A'],
+      backgroundColor: [colors.accentOne, colors.accentTwo, colors.mainDark],
     }]
   },
   options: {
+    legend: {
+      display: true,
+      position: 'right',
+    },
+    animation: {
+      duration: 0
+    },
     responsive: true,
     maintainAspectRatio: false,
     scales: {
       yAxes: [{
+        gridLines: false,
         ticks: {
-          beginAtZero: true
+          display: false
         }
       }]
     }
