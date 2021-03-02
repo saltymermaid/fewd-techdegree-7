@@ -18,6 +18,13 @@ path {
   width: 25px;
 }
 
-svg {
-  width: 70%;
+nav li svg {
+  width: 100%;
 }
+
+.widget svg path {
+  transform: scale(0.6);
+  transform-origin: 50% 50%;
+  fill: $light;
+}
+

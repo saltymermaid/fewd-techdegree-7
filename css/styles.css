@@ -348,14 +348,38 @@ template {
 /* ============================================= */
 * {
   font-family: "Lato", sans-serif;
+  color: grey;
+}
+
+.alert *, .logo *, .user-name {
+  color: white;
+}
+
+.social-name {
+  color: #CA2085;
+}
+
+.social-stat {
+  color: #4b4b4b;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 15px;
 }
 
 /* ============================================= */
 /*              Base styles                      */
 /* ============================================= */
 html {
-  max-width: 768px;
+  width: 90%;
+  max-width: 1000px;
   margin: auto;
+}
+
+main div {
+  padding: 10px;
 }
 
 #notification {
@@ -378,8 +402,14 @@ path {
   width: 25px;
 }
 
-svg {
-  width: 70%;
+nav li svg {
+  width: 100%;
+}
+
+.widget svg path {
+  transform: scale(0.6);
+  transform-origin: 50% 50%;
+  fill: white;
 }
 
 /* ============================================= */
@@ -421,9 +451,22 @@ nav {
 main {
   grid-area: main;
   display: grid;
-  grid-template-rows: 50px;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "alert alert" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+  grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+}
+
+.main-header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "tab none none search" "alert alert alert alert";
+}
+
+.tab {
+  grid-area: tab;
+}
+
+.main-header-search {
+  grid-area: search;
 }
 
 .alert {
@@ -444,8 +487,43 @@ main {
 
 #social {
   grid-area: social;
-  color: white;
-  background-color: #D29506;
+  color: #D29506;
+  border: solid 1px #D29506;
+}
+
+.social-name {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.social-stat {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+#widget-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.widget {
+  border: solid 1px #CA2085;
+  border-radius: 5px;
+  background-color: #fff9fd;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  padding: 10px;
+}
+
+.widget svg {
+  grid-row: 1/-1;
+  width: 50px;
+  height: 50px;
+  background-color: #CA2085;
+  border-radius: 50%;
 }
 
 #new-members {
@@ -529,13 +607,25 @@ nav {
   padding: 0;
 }
 
+.traffic-nav {
+  list-style-type: none;
+}
+
 .alert {
+  width: 100%;
+}
+
+.alert-banner {
   color: white;
   background-color: #CA2085;
   border-radius: 5px;
-  padding: 5px;
-  margin: 10px auto;
+  margin: auto;
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.alert-banner p {
+  margin: 0;
 }
 
 .closebtn {

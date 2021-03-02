@@ -1,11 +1,19 @@
 
 .alert {
+  width: 100%;
+}
+
+.alert-banner {
   color: $light;
   background-color: $main-dark;
   border-radius: 5px;
-  padding: 5px;
-  margin: 10px auto;
+  margin: auto;
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+  p {
+    margin: 0;
+  }
 }
 
 .closebtn {

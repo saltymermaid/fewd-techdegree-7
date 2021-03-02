@@ -4,4 +4,23 @@
 
 * {
   font-family: 'Lato', sans-serif;
+  color: $font-medium;
+}
+
+.alert *, .logo *, .user-name {
+  color: $light;
+}
+
+.social-name {
+  color: $main-dark;
+}
+
+.social-stat {
+  color: $font-dark;
+  font-weight: 300;
+  font-size: $font-size-large;
+}
+
+h1 {
+  font-size: $font-size-small;
 }
