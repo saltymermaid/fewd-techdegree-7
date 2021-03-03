@@ -29,31 +29,7 @@ alert.addEventListener('click', e => {
   }
 });
 
-let monthlyTraffic = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  data: [600, 750, 2250, 1700, 2500, 2400, 2550, 1400, 1600, 1725, 2860, 3421],
-  suggestedMax: 3500
-}
-
-let weeklyTraffic = {
-  labels: ['16-22','23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-  data: [500, 1000, 600, 1250, 1750, 1100, 1500, 1000, 1500, 2000, 1500, 2000],
-  suggestedMax: 2500
-}
-
-let dayToDayTraffic = {
-  labels: ['Wed', 'Thurs', 'Fri', 'Sat', 'Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-  data: [225, 330, 300, 150, 250, 450, 300, 250, 400, 340, 200],
-  suggestedMax: 500
-}
-
-let hourlyTraffic = {
-  labels: ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  data: [25, 30, 15, 35, 20, 45, 20, 15, 35, 15, 20],
-  suggestedMax: 50
-}
-
-let trafficData = monthlyTraffic;
+let trafficData = fakeTraffic['weekly'];
 
 Chart.defaults.global.legend.display = false;
 let traffic = document.getElementById('traffic').getContext('2d');
@@ -147,3 +123,19 @@ let mobileUsersChart = new Chart(mobileUsers, {
     }
   }
 });
+
+let trafficButton = document.querySelector('.traffic-nav');
+let buttons = trafficButton.querySelectorAll('li');
+trafficButton.addEventListener('click', e => {
+  buttons.forEach(button => {
+    button.setAttribute("class", "traffic-nav-link")
+  })
+  let pressedKey = (e.target.innerHTML).toLowerCase();
+  if (e.target.tagName === 'LI') {
+    e.target.classList.add("active");
+    trafficChart.config.data.datasets[0].data = fakeTraffic[pressedKey].data;
+    trafficChart.config.data.labels = fakeTraffic[pressedKey].labels;
+    trafficChart.config.options.scales.yAxes[0].ticks.suggestedMax = fakeTraffic[pressedKey].suggestedMax;
+    trafficChart.update();
+  }
+})

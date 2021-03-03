@@ -429,6 +429,12 @@ nav li svg {
     transform: rotate(0deg);
   }
 }
+.traffic-nav-link.active {
+  background-color: #5FBAAF;
+  color: white;
+  border-radius: 5px;
+}
+
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
