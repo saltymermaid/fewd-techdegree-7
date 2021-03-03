@@ -17,9 +17,15 @@
   }
 }
 
+.traffic-nav-link {
+  margin: 5px;
+  padding: 5px;
+}
+
+
 .traffic-nav-link.active {
   background-color: $active;
   color: $light;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 

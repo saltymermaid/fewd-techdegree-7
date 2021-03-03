@@ -429,10 +429,15 @@ nav li svg {
     transform: rotate(0deg);
   }
 }
+.traffic-nav-link {
+  margin: 5px;
+  padding: 5px;
+}
+
 .traffic-nav-link.active {
   background-color: #5FBAAF;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 /* ============================================= */
@@ -481,6 +486,15 @@ main {
 
 #traffic-div {
   grid-area: traffic;
+}
+
+#traffic-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.traffic-nav {
+  display: flex;
 }
 
 #daily-div {

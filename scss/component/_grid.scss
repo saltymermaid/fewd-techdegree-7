@@ -59,6 +59,15 @@ main {
   grid-area: traffic;
 }
 
+#traffic-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.traffic-nav {
+  display: flex;
+}
+
 #daily-div {
   grid-area: daily;
 }
