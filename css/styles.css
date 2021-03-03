@@ -367,6 +367,13 @@ template {
 
 h1 {
   font-size: 15px;
+  text-transform: uppercase;
+}
+
+.activity-info p {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
 }
 
 /* ============================================= */
@@ -478,6 +485,8 @@ main {
 
 .main-header-search {
   grid-area: search;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .alert {
@@ -555,7 +564,29 @@ main {
 #recent-activity {
   grid-area: recent;
   color: white;
-  background-color: #CF8DAB;
+}
+
+#activities {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-info {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-areas: "profile activity arrow" "profile time arrow";
+  padding: 0;
+}
+.activity-info img {
+  grid-area: profile;
+}
+
+.act {
+  grid-area: activity;
+}
+
+.time {
+  grid-area: time;
 }
 
 #message-user {
@@ -652,6 +683,12 @@ nav {
 
 .traffic-div {
   height: 250px;
+}
+
+#recent-activity img {
+  border-radius: 50%;
+  height: 35px;
+  width: auto;
 }
 
 /* ============================================= */

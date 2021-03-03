@@ -23,4 +23,11 @@
 
 h1 {
   font-size: $font-size-small;
+  text-transform: uppercase;
+}
+
+.activity-info p {
+  font-size: $font-size-tiny;
+  margin: 0;
+  padding: 0;
 }

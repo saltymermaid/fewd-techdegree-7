@@ -20,3 +20,46 @@ let fakeTraffic = {
     suggestedMax: 3500
   }
 }
+
+let fakeUsers = [
+  {
+    name: 'Victoria Chambers',
+    email: 'victoria.chambers80@example.com',
+    profile: 'images/member-1.jpg',
+    recentActivity: {
+      action: 'commented on',
+      item: "YourApp's SEO Tips",
+      time: '4 hours ago',
+    }
+  },
+  {
+    name: 'Dale Byrd',
+    email: 'dale.byrd52@example.com',
+    profile: 'images/member-2.jpg',
+    recentActivity: {
+      action: 'liked the post',
+      item: "Facebook's Changes for 2021",
+      time: '5 hours ago',
+    }
+  },
+  {
+    name: 'Dawn Wood',
+    email: 'dawn.wood16@example.com',
+    profile: 'images/member-3.jpg',
+    recentActivity: {
+      action: 'commented on',
+      item: "Facebook's Changes for 2021",
+      time: '5 hours ago',
+    }
+  },
+  {
+    name: 'Dan Oliver',
+    email: 'dan.oliver82@example.com',
+    profile: 'images/member-4.jpg',
+    recentActivity: {
+      action: 'posted',
+      item: "YourApp's SEO Tips",
+      time: '1 day ago',
+    }
+  },
+]

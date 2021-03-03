@@ -49,6 +49,8 @@ main {
 
 .main-header-search {
   grid-area: search;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .alert {
@@ -126,8 +128,34 @@ main {
 #recent-activity {
   grid-area: recent;
   color: $light;
-  background-color: $main;
 }
+
+#activities {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-info {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-areas:
+    "profile activity arrow"
+    "profile time arrow";
+  img {
+    grid-area: profile;
+  }
+  padding: 0;
+}
+
+.act {
+  grid-area: activity;
+}
+
+.time {
+  grid-area: time;
+}
+
+
 
 #message-user {
   grid-area: message;
