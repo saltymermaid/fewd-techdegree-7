@@ -37,6 +37,16 @@ function createWithTextAndAddToElement(elem, content, classy, adult) {
   return element;
 }
 
+function makeNewMembers() {
+  let newMembers = document.querySelector('#members');
+  fakeUsers.forEach(user => {
+    let memberDiv = createAndAddToElement('div', 'class', 'member-info', newMembers);
+    createAndAddToElement('img', 'src', user.profile, memberDiv);
+    createWithTextAndAddToElement('p', user.name, 'name', memberDiv)
+    createWithTextAndAddToElement('p', user.email, 'email', memberDiv)
+  })
+}
+
 function makeRecentActivity() {
   let recentActivity = document.querySelector('#activities');
   fakeUsers.forEach(user => {
@@ -47,4 +57,6 @@ function makeRecentActivity() {
     createWithTextAndAddToElement('p', user.recentActivity.time, 'time', activityDiv)
   })
 }
+
+makeNewMembers();
 makeRecentActivity();

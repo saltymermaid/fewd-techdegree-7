@@ -370,7 +370,8 @@ h1 {
   text-transform: uppercase;
 }
 
-.activity-info p {
+.activity-info p,
+.member-info p {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -538,6 +539,7 @@ main {
 }
 
 .widget {
+  flex: 0 1 250px;
   border: solid 1px #CA2085;
   border-radius: 5px;
   background-color: #fff9fd;
@@ -558,7 +560,29 @@ main {
 #new-members {
   grid-area: members;
   color: white;
-  background-color: #55414A;
+}
+
+#members {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-info {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-areas: "profile name date" "profile email date";
+  padding: 0;
+}
+.member-info img {
+  grid-area: profile;
+}
+
+.name {
+  grid-area: name;
+}
+
+.email {
+  grid-area: email;
 }
 
 #recent-activity {
@@ -685,7 +709,8 @@ nav {
   height: 250px;
 }
 
-#recent-activity img {
+#recent-activity img,
+#new-members img {
   border-radius: 50%;
   height: 35px;
   width: auto;

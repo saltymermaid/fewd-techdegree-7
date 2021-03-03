@@ -26,7 +26,8 @@ h1 {
   text-transform: uppercase;
 }
 
-.activity-info p {
+.activity-info p,
+.member-info p {
   font-size: $font-size-tiny;
   margin: 0;
   padding: 0;
