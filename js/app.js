@@ -43,7 +43,10 @@ function makeNewMembers() {
     let memberDiv = createAndAddToElement('div', 'class', 'member-info', newMembers);
     createAndAddToElement('img', 'src', user.profile, memberDiv);
     createWithTextAndAddToElement('p', user.name, 'name', memberDiv)
-    createWithTextAndAddToElement('p', user.email, 'email', memberDiv)
+    let emailAddy = createWithTextAndAddToElement('a', user.email, 'email', memberDiv)
+    emailAddy.setAttribute("href", `mailto:${user.email}`)
+    let joinDate = new Date().toLocaleDateString("en-US")
+    createWithTextAndAddToElement('span', joinDate, 'join-date', memberDiv)
   })
 }
 
@@ -55,6 +58,7 @@ function makeRecentActivity() {
     let activity = `${user.name} ${user.recentActivity.action} ${user.recentActivity.item}`
     createWithTextAndAddToElement('p', activity, 'act', activityDiv)
     createWithTextAndAddToElement('p', user.recentActivity.time, 'time', activityDiv)
+    createWithTextAndAddToElement('span', '>', 'arrow', activityDiv)
   })
 }
 

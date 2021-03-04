@@ -18,17 +18,33 @@
 .social-stat {
   color: $font-dark;
   font-weight: 300;
-  font-size: $font-size-large;
+  font-size: $font-size-xlarge;
 }
 
 h1 {
-  font-size: $font-size-small;
+  font-size: $font-size-medium;
   text-transform: uppercase;
 }
 
 .activity-info p,
 .member-info p {
-  font-size: $font-size-tiny;
+  font-size: $font-size-small;
   margin: 0;
   padding: 0;
+}
+
+.arrow {
+  color: $main-dark;
+  font-size: $font-size-large;
+}
+
+.join-date,
+.email,
+.time {
+  font-size: $font-size-tiny;
+}
+
+.email {
+  color: $main;
+  text-decoration: none;
 }

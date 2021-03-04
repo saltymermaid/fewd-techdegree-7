@@ -81,7 +81,6 @@ main {
 #social {
   grid-area: social;
   color: $accent-one;
-  border: solid 1px $accent-one;
 }
 
 .social-name {
@@ -139,7 +138,14 @@ main {
   img {
     grid-area: profile;
   }
-  padding: 0;
+}
+
+.member-info,
+.activity-info {
+  padding: 8px 0;
+  &:not(:last-child) {
+    border-bottom: 0.5px solid $main-light;
+  }
 }
 
 .name {
@@ -148,6 +154,11 @@ main {
 
 .email {
   grid-area: email;
+}
+
+.join-date {
+  grid-area: date;
+  margin: auto;
 }
 
 #recent-activity {
@@ -169,7 +180,6 @@ main {
   img {
     grid-area: profile;
   }
-  padding: 0;
 }
 
 .act {
@@ -178,6 +188,10 @@ main {
 
 .time {
   grid-area: time;
+}
+
+.arrow {
+  grid-area: arrow;
 }
 
 #message-user {
@@ -190,4 +204,8 @@ main {
   grid-area: settings;
   color: $light;
   background-color: $accent-one;
+}
+
+.bordered-section {
+  border: 0.5px solid $main-light;
 }

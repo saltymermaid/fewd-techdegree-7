@@ -372,9 +372,25 @@ h1 {
 
 .activity-info p,
 .member-info p {
-  font-size: 11px;
+  font-size: 12px;
   margin: 0;
   padding: 0;
+}
+
+.arrow {
+  color: #CA2085;
+  font-size: 25px;
+}
+
+.join-date,
+.email,
+.time {
+  font-size: 10px;
+}
+
+.email {
+  color: #CF8DAB;
+  text-decoration: none;
 }
 
 /* ============================================= */
@@ -518,7 +534,6 @@ main {
 #social {
   grid-area: social;
   color: #D29506;
-  border: solid 1px #D29506;
 }
 
 .social-name {
@@ -571,10 +586,18 @@ main {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   grid-template-areas: "profile name date" "profile email date";
-  padding: 0;
 }
 .member-info img {
   grid-area: profile;
+}
+
+.member-info,
+.activity-info {
+  padding: 8px 0;
+}
+.member-info:not(:last-child),
+.activity-info:not(:last-child) {
+  border-bottom: 0.5px solid #FFE4F8;
 }
 
 .name {
@@ -583,6 +606,11 @@ main {
 
 .email {
   grid-area: email;
+}
+
+.join-date {
+  grid-area: date;
+  margin: auto;
 }
 
 #recent-activity {
@@ -599,7 +627,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   grid-template-areas: "profile activity arrow" "profile time arrow";
-  padding: 0;
 }
 .activity-info img {
   grid-area: profile;
@@ -613,6 +640,10 @@ main {
   grid-area: time;
 }
 
+.arrow {
+  grid-area: arrow;
+}
+
 #message-user {
   grid-area: message;
   color: white;
@@ -623,6 +654,10 @@ main {
   grid-area: settings;
   color: white;
   background-color: #D29506;
+}
+
+.bordered-section {
+  border: 0.5px solid #FFE4F8;
 }
 
 /* ============================================= */
@@ -654,7 +689,7 @@ header {
 .logo {
   font-family: "Oswald", sans-serif;
   font-weight: 200;
-  font-size: 30px;
+  font-size: 25px;
   display: block;
   margin-right: auto;
   color: white;
