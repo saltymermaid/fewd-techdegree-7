@@ -93,3 +93,28 @@ send.addEventListener('click', () => {
   window.alert(`Message successfully sent to: ${user.value}`);
   }
 });
+
+const settings = document.querySelector('#settings');
+
+settings.addEventListener('click', (e) => {
+  let selectedToggle = e.target;
+  selectedToggle.classList.toggle('active');
+  if(selectedToggle.classList.contains('active')) {
+    localStorage.setItem(selectedToggle.id.toString(), '1')
+  } else {
+    localStorage.setItem(selectedToggle.id.toString(), '0')
+  }
+})
+
+const toggles = document.querySelectorAll('.toggle-button')
+function setToggleValues() {
+  toggles.forEach(tog => {
+    if(localStorage.getItem(tog.id.toString()) === '1') {
+      tog.classList = ("toggle-button active")
+    } else {
+      tog.classList = ("toggle-button")
+    }
+  })
+}
+
+setToggleValues();

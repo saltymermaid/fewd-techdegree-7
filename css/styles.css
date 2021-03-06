@@ -472,6 +472,39 @@ nav li svg {
   border-radius: 20px;
 }
 
+.toggle-switch {
+  position: relative;
+}
+
+.toggle-button {
+  background: #BCA5AF;
+  width: 4rem;
+  height: 1rem;
+  border-radius: 30px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.round-center {
+  position: relative;
+  background: white;
+  height: 0.1rem;
+  width: 0.1rem;
+  right: 2px;
+  bottom: 3px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-button.active {
+  background: #CA2085;
+}
+
+.toggle-button.active > .round-center {
+  margin-left: 3rem;
+}
+
 /* ============================================= */
 /*              Grid System                      */
 /* ============================================= */
@@ -676,7 +709,10 @@ main {
 #settings {
   grid-area: settings;
   color: white;
-  background-color: #D29506;
+}
+
+.setting {
+  display: flex;
 }
 
 .bordered-section {

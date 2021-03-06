@@ -218,7 +218,10 @@ main {
 #settings {
   grid-area: settings;
   color: $light;
-  background-color: $accent-one;
+}
+
+.setting {
+  display: flex;
 }
 
 .bordered-section {
