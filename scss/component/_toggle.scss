@@ -13,6 +13,7 @@
 }
 
 .round-center {
+  display: inline-block;
   position: relative;
   background: $light;
   height: .1rem;
@@ -20,6 +21,12 @@
   right: 2px;
   bottom: 3px;
   border-radius: 50%;
+  transition: all .2s ease-in-out;
+}
+
+.toggle-status {
+  padding-top: 0;
+  color: $light;
   transition: all .2s ease-in-out;
 }
 

@@ -98,17 +98,26 @@ const settings = document.querySelector('#settings');
 
 settings.addEventListener('click', (e) => {
   let selectedToggle = e.target;
-  selectedToggle.classList.toggle('active');
-  if(selectedToggle.classList.contains('active')) {
+  if (selectedToggle.classList.contains('toggle-button')) {
+    selectedToggle.classList.toggle('active');
+  }
+    if(selectedToggle.classList.contains('active')) {
     localStorage.setItem(selectedToggle.id.toString(), '1')
   } else {
     localStorage.setItem(selectedToggle.id.toString(), '0')
   }
 })
 
+const profTog = document.querySelector('#profile-public')
+function createToggles(tog) {
+  createAndAddToElement('div', 'class', 'round-center', tog)
+  createWithTextAndAddToElement('div', 'OFF', 'toggle-status', tog)
+}
+
 const toggles = document.querySelectorAll('.toggle-button')
 function setToggleValues() {
   toggles.forEach(tog => {
+    createToggles(tog)
     if(localStorage.getItem(tog.id.toString()) === '1') {
       tog.classList = ("toggle-button active")
     } else {

@@ -487,6 +487,7 @@ nav li svg {
 }
 
 .round-center {
+  display: inline-block;
   position: relative;
   background: white;
   height: 0.1rem;
@@ -494,6 +495,12 @@ nav li svg {
   right: 2px;
   bottom: 3px;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-status {
+  padding-top: 0;
+  color: white;
   transition: all 0.2s ease-in-out;
 }
 
@@ -712,6 +719,10 @@ main {
 }
 
 .setting {
+  display: flex;
+}
+
+.toggle-button {
   display: flex;
 }
 
