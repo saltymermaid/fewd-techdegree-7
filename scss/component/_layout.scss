@@ -197,7 +197,22 @@ main {
 #message-user {
   grid-area: message;
   color: $light;
-  background-color: $main-light;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#user-search {
+  height: 2rem;
+}
+
+#message {
+  height: 6rem;
+}
+
+#send-button {
+  height: 2rem;
 }
 
 #settings {

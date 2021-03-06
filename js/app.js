@@ -64,3 +64,32 @@ function makeRecentActivity() {
 
 makeNewMembers();
 makeRecentActivity();
+
+// let search = document.querySelector('#search').value;
+// function handleSearch() {
+//   search = search.toLowerCase();
+//   const allUsers = fakeUsers.map(user => user.name)
+
+//   allUsers.forEach(user => {
+//     if (user.toLowerCase().includes(search)) { 
+//       createWithTextAndAddToElement('li', user, 'found', 'search'); 
+//     } 
+//   })
+// }
+
+// search.addEventListener('keyup', handleSearch);
+
+const user = document.querySelector('#user-search');
+const message = document.querySelector('#message');
+const send = document.querySelector('#send-button');
+send.addEventListener('click', () => {
+  if (user.value === '' && message.value === '') {
+  window.alert('Oooops! You need to fill out both the user and message fields before sending');
+  } else if (user.value === '' ) {
+  window.alert('Uh oh! Who should the message go to?');
+  } else if (message.value === '' ) {
+  window.alert('Please fill out message field before sending');
+  } else {
+  window.alert(`Message successfully sent to: ${user.value}`);
+  }
+});

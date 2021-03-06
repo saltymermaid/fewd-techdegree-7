@@ -393,6 +393,14 @@ h1 {
   text-decoration: none;
 }
 
+#message-user {
+  font-size: 12px;
+}
+#message-user #user-search::placeholder,
+#message-user #message::placeholder {
+  padding: 5px;
+}
+
 /* ============================================= */
 /*              Base styles                      */
 /* ============================================= */
@@ -647,7 +655,22 @@ main {
 #message-user {
   grid-area: message;
   color: white;
-  background-color: #FFE4F8;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#user-search {
+  height: 2rem;
+}
+
+#message {
+  height: 6rem;
+}
+
+#send-button {
+  height: 2rem;
 }
 
 #settings {
