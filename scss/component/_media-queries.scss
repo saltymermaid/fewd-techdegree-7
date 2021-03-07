@@ -2,7 +2,7 @@
 /*              Media Queries                    */
 /* ============================================= */
 
-@media screen and (min-width: $screen-break) {
+@media screen and (min-width: $screen-break-small) {
   body {
     grid-template-rows: 50px;
     grid-template-columns: 1fr 19fr;
@@ -11,11 +11,59 @@
       "nav main";
   }
 
-  nav li svg {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "traffic traffic"
+      "daily mobile"
+      "social social"
+      "members recent"
+      "message settings";
+  }
+
+  .main-header {
+    grid-template-areas:
+      "tab none search"
+      "alert alert alert";
+  }
+
+  nav {
+    background: $main-dark;
+    padding: 10px 0;
+  }
+
+  .nav li svg {
     height: 100%;
+  }
+
+  .nav li {
+    margin: .5rem 0;
+    padding: 0 0 0 7px;
+  }
+
+  .nav li.active {
+    border-top: 4px solid $main-dark;
+    border-left: 4px solid $active;
   }
 
   .nav {
     flex-direction: column;
+  }
+
+  #widget-row {
+    flex-direction: row;
+  }
+
+  .widget {
+    flex: 0 1 250px;
+  }
+}
+
+@media screen and (min-width: $screen-break-large) {
+  .main-header {
+    grid-template-areas:
+      "tab none none search"
+      "alert alert alert alert";
   }
 }

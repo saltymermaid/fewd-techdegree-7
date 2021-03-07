@@ -419,14 +419,14 @@ main > div {
 }
 
 #notification {
-  height: 35px;
-  width: 35px;
+  height: 3rem;
+  width: 3rem;
   transition: transform 0.3s ease-out;
 }
 
 #notification:hover {
   animation: ding 0.5s ease-out;
-  transform: rotate(-15deg);
+  transform: rotate(0deg);
 }
 
 path {
@@ -438,8 +438,8 @@ path {
   width: 25px;
 }
 
-nav li svg {
-  width: 35px;
+.nav li svg {
+  width: 25px;
 }
 
 .widget svg path {
@@ -455,13 +455,31 @@ nav li svg {
   0% {
     transform: rotate(15deg);
   }
-  25% {
+  10% {
     transform: rotate(0deg);
   }
-  50% {
+  20% {
     transform: rotate(-15deg);
   }
-  75% {
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(15deg);
+  }
+  90% {
     transform: rotate(0deg);
   }
 }
@@ -609,6 +627,22 @@ nav {
   grid-area: nav;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav li {
+  margin: 0 0.5rem;
+  padding: 7px 0 0 0;
+  border: 4px solid #CA2085;
+}
+
+.nav li.active {
+  border-left: 4px solid #CA2085;
+  border-top: 4px solid #5FBAAF;
+}
+
 .top-bar {
   grid-area: top;
 }
@@ -616,14 +650,13 @@ nav {
 main {
   grid-area: main;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+  grid-template-areas: "header" "traffic" "daily" "mobile" "social" "members" "recent" "message" "settings";
 }
 
 .main-header {
   grid-area: header;
   display: grid;
-  grid-template-areas: "tab none none search" "alert alert alert alert";
+  grid-template-areas: "tab search" "alert alert";
 }
 
 .tab {
@@ -666,25 +699,15 @@ main {
   color: #D29506;
 }
 
-.social-name {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-
-.social-stat {
-  grid-column: 2/3;
-  grid-row: 2/3;
-}
-
 #widget-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  margin: 20px auto;
+  margin: 2rem;
 }
 
 .widget {
-  flex: 0 1 250px;
+  flex: 0 1 5rem;
   border: solid 1px #CA2085;
   border-radius: 5px;
   background-color: #fff9fd;
@@ -692,6 +715,7 @@ main {
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 2fr;
   padding: 10px;
+  margin: 1rem;
 }
 
 .widget svg {
@@ -862,7 +886,7 @@ header {
 
 nav {
   background: #CA2085;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .nav {
@@ -919,12 +943,49 @@ nav {
     grid-template-areas: "top top" "nav main";
   }
 
-  nav li svg {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+  }
+
+  .main-header {
+    grid-template-areas: "tab none search" "alert alert alert";
+  }
+
+  nav {
+    background: #CA2085;
+    padding: 10px 0;
+  }
+
+  .nav li svg {
     height: 100%;
+  }
+
+  .nav li {
+    margin: 0.5rem 0;
+    padding: 0 0 0 7px;
+  }
+
+  .nav li.active {
+    border-top: 4px solid #CA2085;
+    border-left: 4px solid #5FBAAF;
   }
 
   .nav {
     flex-direction: column;
+  }
+
+  #widget-row {
+    flex-direction: row;
+  }
+
+  .widget {
+    flex: 0 1 250px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-header {
+    grid-template-areas: "tab none none search" "alert alert alert alert";
   }
 }
 

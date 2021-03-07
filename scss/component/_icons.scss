@@ -1,12 +1,12 @@
 #notification {
-  height: 35px;
-  width: 35px;
+  height: 3rem;
+  width: 3rem;
   transition: transform .3s ease-out;
 }
 
 #notification:hover {
   animation: ding .5s ease-out;
-  transform: rotate(-15deg)
+  transform: rotate(0deg)
 }
 
 path {
@@ -18,8 +18,8 @@ path {
   width: 25px;
 }
 
-nav li svg {
-  width: 35px;
+.nav li svg {
+  width: 25px;
 }
 
 .widget svg path {
