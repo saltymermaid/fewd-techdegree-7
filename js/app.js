@@ -114,8 +114,9 @@ function updateToggle(toggie) {
 const settings = document.querySelector('#settings');
 
 settings.addEventListener('click', (e) => {
-  let selectedToggle = e.target;
-  if (selectedToggle.classList.contains('toggle-button')) {
+  let selectedDiv = e.target.closest('.setting');
+  if (selectedDiv.classList.contains('toggle-setting')) {
+    let selectedToggle = selectedDiv.querySelector('.toggle-switch .toggle-button');
     selectedToggle.classList.toggle('active');
     updateToggle(selectedToggle);
     if(selectedToggle.classList.contains('active')) {
@@ -125,6 +126,25 @@ settings.addEventListener('click', (e) => {
     }
   }
 })
+
+settings.addEventListener('change', (e) => {
+  let selectedDiv = e.target.closest('.setting');
+  if (selectedDiv.classList.contains('timezone-setting')) {
+    let tzSelect = selectedDiv.querySelector('#timezone');
+    localStorage.setItem('timezone', tzSelect.value);
+  }
+})
+
+function setTimeZone() {
+  let tzSelect = document.querySelectorAll('#timezone > option');
+  let savedTz = localStorage.getItem('timezone');
+  tzSelect.forEach(tz => {
+    tz.removeAttribute('selected');
+    if (tz.value === savedTz) {
+      tz.setAttribute('selected', 'selected')
+    }
+  })
+}
 
 const toggles = document.querySelectorAll('.toggle-button')
 function setToggleValues() {
@@ -139,3 +159,5 @@ function setToggleValues() {
 }
 
 setToggleValues();
+setTimeZone();
+

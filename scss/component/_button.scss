@@ -27,3 +27,19 @@
   color: $light;
   border-radius: 20px;
 }
+
+#settings-buttons button {
+  border: none;
+  color: $light;
+  padding: 6px;
+  border-radius: 3px;
+  flex: 0 15rem;
+}
+
+#save-button {
+  background: $main-dark;
+}
+
+#cancel-button {
+  background: $disabled;
+}

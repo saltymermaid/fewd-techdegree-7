@@ -472,6 +472,22 @@ nav li svg {
   border-radius: 20px;
 }
 
+#settings-buttons button {
+  border: none;
+  color: white;
+  padding: 6px;
+  border-radius: 3px;
+  flex: 0 15rem;
+}
+
+#save-button {
+  background: #CA2085;
+}
+
+#cancel-button {
+  background: #BCA5AF;
+}
+
 .toggle-switch {
   position: relative;
 }
@@ -724,6 +740,11 @@ main {
 
 .toggle-button {
   display: flex;
+}
+
+#settings-buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .bordered-section {

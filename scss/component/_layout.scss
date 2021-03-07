@@ -228,6 +228,11 @@ main {
   display: flex;
 }
 
+#settings-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .bordered-section {
   border: 0.5px solid $main-light;
 }
