@@ -5,12 +5,16 @@
 /*              Base styles                      */
 /* ============================================= */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   width: 90vw;
   max-width: 1000px;
   margin: auto;
 }
 
-main div {
+main > div {
   padding: 10px;
 }

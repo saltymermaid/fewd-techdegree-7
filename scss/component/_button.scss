@@ -28,6 +28,68 @@
   border-radius: 20px;
 }
 
+#auto-complete {
+  max-width: 400px;
+  height: 100%;
+  position: relative;
+}
+
+#auto-complete .search-input {
+  background: $light;
+  width: 100%;
+  border-radius: 5px;
+  @include basic-box-shadow;
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: $font-size-small;
+  @include basic-box-shadow;
+  padding-left: 8px;
+}
+
+.search-input .auto-com-box {
+  background: $light;
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-input.active .auto-com-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 32;
+  @include basic-box-shadow;
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.auto-com-box li {
+  background: $light;
+  list-style: none;
+  padding: 8px 0px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.auto-com-box li:hover {
+  background: $disabled;
+}
+
+.search-input.active .auto-com-box li {
+  display: block;
+}
+
 #settings-buttons button {
   border: none;
   color: $light;

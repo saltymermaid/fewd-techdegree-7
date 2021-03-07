@@ -65,19 +65,44 @@ function makeRecentActivity() {
 makeNewMembers();
 makeRecentActivity();
 
-// let search = document.querySelector('#search').value;
-// function handleSearch() {
-//   search = search.toLowerCase();
-//   const allUsers = fakeUsers.map(user => user.name)
+const searchWrapper = document.querySelector('.search-input');
+const inputBox = searchWrapper.querySelector('input');
+const suggestionBox = searchWrapper.querySelector('.auto-com-box');
+const usersToSearch = []
+fakeUsers.forEach(user => {
+  usersToSearch.push(user.name);
+})
+inputBox.onkeyup = (e) => {
+  let userSearch = e.target.value;
+  let potentials = [];
+  if (userSearch) {
+    potentials = usersToSearch.filter((data) => {
+      return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
+    });
+    searchWrapper.classList.add('active');
+  } else {
+    searchWrapper.classList.remove('active');
+  }
+  makeSuggestionList(potentials);
+}
 
-//   allUsers.forEach(user => {
-//     if (user.toLowerCase().includes(search)) { 
-//       createWithTextAndAddToElement('li', user, 'found', 'search'); 
-//     } 
-//   })
-// }
+function makeSuggestionList(listOfUsers) {
+  while (suggestionBox.lastChild) {
+    suggestionBox.removeChild(suggestionBox.lastChild);
+  }
+  if (listOfUsers.length === 0) {
+    listOfUsers.push(inputBox.value)
+  }
+  listOfUsers.forEach(name => {
+    let userLi = createWithTextAndAddToElement('li', name, 'user', suggestionBox)
+    userLi.setAttribute('onclick', 'select(this)')
+  })
+}
 
-// search.addEventListener('keyup', handleSearch);
+function select(element) {
+  inputBox.value = element.textContent;
+  searchWrapper.classList.remove('active');
+}
 
 const user = document.querySelector('#user-search');
 const message = document.querySelector('#message');
@@ -92,6 +117,8 @@ send.addEventListener('click', () => {
   } else {
   window.alert(`Message successfully sent to: ${user.value}`);
   }
+  user.value = '';
+  message.value = '';
 });
 
 function createToggles(tog) {

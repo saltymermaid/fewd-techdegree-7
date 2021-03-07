@@ -404,13 +404,17 @@ h1 {
 /* ============================================= */
 /*              Base styles                      */
 /* ============================================= */
+* {
+  box-sizing: border-box;
+}
+
 html {
   width: 90vw;
   max-width: 1000px;
   margin: auto;
 }
 
-main div {
+main > div {
   padding: 10px;
 }
 
@@ -470,6 +474,68 @@ nav li svg {
   background-color: #5FBAAF;
   color: white;
   border-radius: 20px;
+}
+
+#auto-complete {
+  max-width: 400px;
+  height: 100%;
+  position: relative;
+}
+
+#auto-complete .search-input {
+  background: white;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  padding-left: 8px;
+}
+
+.search-input .auto-com-box {
+  background: white;
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-input.active .auto-com-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 32;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.auto-com-box li {
+  background: white;
+  list-style: none;
+  padding: 8px 0px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.auto-com-box li:hover {
+  background: #BCA5AF;
+}
+
+.search-input.active .auto-com-box li {
+  display: block;
 }
 
 #settings-buttons button {
