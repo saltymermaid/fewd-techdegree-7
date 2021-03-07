@@ -94,35 +94,47 @@ send.addEventListener('click', () => {
   }
 });
 
+function createToggles(tog) {
+  if (tog.classList.contains('active')) {
+    createWithTextAndAddToElement('div', 'ON', 'toggle-status', tog);
+    createAndAddToElement('div', 'class', 'round-center', tog);
+  } else {
+    createAndAddToElement('div', 'class', 'round-center', tog);
+    createWithTextAndAddToElement('div', 'OFF', 'toggle-status', tog);
+  }
+}
+
+function updateToggle(toggie) {
+  while (toggie.lastChild) {
+    toggie.removeChild(toggie.lastChild);
+  }
+  createToggles(toggie);
+}
+
 const settings = document.querySelector('#settings');
 
 settings.addEventListener('click', (e) => {
   let selectedToggle = e.target;
   if (selectedToggle.classList.contains('toggle-button')) {
     selectedToggle.classList.toggle('active');
-  }
+    updateToggle(selectedToggle);
     if(selectedToggle.classList.contains('active')) {
-    localStorage.setItem(selectedToggle.id.toString(), '1')
-  } else {
-    localStorage.setItem(selectedToggle.id.toString(), '0')
+      localStorage.setItem(selectedToggle.id.toString(), '1');
+    } else {
+      localStorage.setItem(selectedToggle.id.toString(), '0');
+    }
   }
 })
-
-const profTog = document.querySelector('#profile-public')
-function createToggles(tog) {
-  createAndAddToElement('div', 'class', 'round-center', tog)
-  createWithTextAndAddToElement('div', 'OFF', 'toggle-status', tog)
-}
 
 const toggles = document.querySelectorAll('.toggle-button')
 function setToggleValues() {
   toggles.forEach(tog => {
-    createToggles(tog)
-    if(localStorage.getItem(tog.id.toString()) === '1') {
+    if(localStorage.getItem(tog.id) === '1') {
       tog.classList = ("toggle-button active")
     } else {
       tog.classList = ("toggle-button")
     }
+    createToggles(tog);
   })
 }
 

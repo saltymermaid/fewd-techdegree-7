@@ -509,7 +509,7 @@ nav li svg {
 }
 
 .toggle-button.active > .round-center {
-  margin-left: 3rem;
+  margin-left: 0.3rem;
 }
 
 /* ============================================= */
