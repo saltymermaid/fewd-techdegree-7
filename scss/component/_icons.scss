@@ -2,6 +2,8 @@
   height: 3rem;
   width: 3rem;
   transition: transform .3s ease-out;
+  border-right: 2px solid $main-dark;
+  padding-top: 10px;
 }
 
 #notification:hover {

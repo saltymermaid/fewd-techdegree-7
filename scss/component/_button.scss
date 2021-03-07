@@ -35,6 +35,18 @@
   }
 }
 
+.main-header-search {
+  border: .5px solid black;
+  border-radius: 5px;
+  background: $light;
+}
+
+.main-header-search input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
 .traffic-nav-link {
   margin: 5px;
   padding: 5px;
@@ -47,31 +59,32 @@
 }
 
 #auto-complete {
-  max-width: 400px;
+  max-width: 100%;
   height: 100%;
   position: relative;
 }
 
 #auto-complete .search-input {
-  background: $light;
+  background: $main-light;
   width: 100%;
   border-radius: 5px;
-  @include basic-box-shadow;
+  @include basic-box-border;
 }
 
 .search-input input {
-  height: 55px;
+  height: 30px;
   width: 100%;
   outline: none;
   border: none;
   border-radius: 5px;
   font-size: $font-size-small;
-  @include basic-box-shadow;
+  background: $off-light;
+  @include basic-box-border;
   padding-left: 8px;
 }
 
 .search-input .auto-com-box {
-  background: $light;
+  background: $off-light;
   padding: 0px;
   max-height: 280px;
   overflow-y: auto;
@@ -81,17 +94,17 @@
 
 .search-input.active .auto-com-box {
   position: absolute;
+  border-radius: 5px;
   left: 0;
   right: 0;
   top: 32;
-  @include basic-box-shadow;
+  @include basic-box-border;
   padding: 10px 8px;
   opacity: 1;
   pointer-events: auto;
 }
 
 .auto-com-box li {
-  background: $light;
   list-style: none;
   padding: 8px 0px;
   width: 100%;
@@ -108,19 +121,35 @@
   display: block;
 }
 
+#message {
+  border-radius: 5px;
+  background: $off-light;
+}
+
+#send-button {
+  border: none;
+  color: $light;
+  background: $main-dark;
+  padding: 6px;
+  border-radius: 3px;
+}
+
 #settings-buttons button {
   border: none;
   color: $light;
   padding: 6px;
   border-radius: 3px;
-  flex: 0 15rem;
+  flex: 0 48%;
 }
 
 .timezone-setting select {
+  height: 2rem;
   margin: 10px 0;
   width: 100%;
-  max-width: 90%;
+  max-width: 100%;
   font-size: $font-size-small;
+  background: $off-light;
+  border-radius: 5px;
 }
 
 #save-button {

@@ -4,7 +4,7 @@
 
 @media screen and (min-width: $screen-break-small) {
   body {
-    grid-template-rows: 50px;
+    grid-template-rows: 60px;
     grid-template-columns: 1fr 19fr;
     grid-template-areas: 
       "top top"
@@ -24,7 +24,7 @@
 
   .main-header {
     grid-template-areas:
-      "tab none search"
+      "tab search search"
       "alert alert alert";
   }
 
@@ -63,7 +63,7 @@
 @media screen and (min-width: $screen-break-large) {
   .main-header {
     grid-template-areas:
-      "tab none none search"
+      "tab search search search"
       "alert alert alert alert";
   }
 }

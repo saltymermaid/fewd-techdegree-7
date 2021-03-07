@@ -5,7 +5,7 @@
 body {
   margin: auto;
   display: grid;
-  grid-template-rows: 50px 50px;
+  grid-template-rows: 60px 50px;
   grid-template-areas: 
     "top top"
     "nav nav"
@@ -58,6 +58,19 @@ main {
   grid-template-areas:
     "tab search"
     "alert alert";
+  padding-top: 0px;
+  padding-right: 0px;
+}
+
+.weird-tab-thing {
+  background: $off-light;
+  border-left: 1px solid $main-light;
+  border-bottom: 1px solid $main-light;
+  display: flex;
+  justify-content: flex-end;
+  grid-area: search;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .tab {
@@ -65,9 +78,9 @@ main {
 }
 
 .main-header-search {
-  grid-area: search;
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .alert {
@@ -211,21 +224,37 @@ main {
   justify-content: space-between;
 }
 
-#user-search {
-  height: 2rem;
+#auto-complete {
+  flex: 0 1rem;
 }
 
 #message {
-  height: 6rem;
+  flex: 0 6rem;
 }
 
 #send-button {
-  height: 2rem;
+  flex: 0 2rem;
 }
 
 #settings {
   grid-area: settings;
   color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#message-user > h1,
+#settings > h1 {
+  flex: 0 1rem;
+}
+
+#settings-buttons {
+  flex: 0 2rem;
+}
+
+.two-toggles {
+  flex: 0 5rem;
 }
 
 .setting {
@@ -251,7 +280,7 @@ main {
 
 #settings-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .bordered-section {

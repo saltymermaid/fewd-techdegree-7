@@ -77,7 +77,7 @@ inputBox.onkeyup = (e) => {
   let potentials = [];
   if (userSearch) {
     potentials = usersToSearch.filter((data) => {
-      return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
+      return data.toLocaleLowerCase().includes(userSearch.toLocaleLowerCase());
     });
     searchWrapper.classList.add('active');
   } else {
