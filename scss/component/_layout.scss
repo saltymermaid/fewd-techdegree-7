@@ -218,22 +218,29 @@ main {
 #message-user {
   grid-area: message;
   color: $light;
-  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+// second child of #message-user
 #auto-complete {
   flex: 0 1rem;
 }
 
+// third child of #message-user
 #message {
   flex: 0 6rem;
 }
 
+// fourth child of #message-user
 #send-button {
   flex: 0 2rem;
+}
+
+#message-user > h1, // first child of #message-user
+#settings > h1 {
+  flex: 0 1rem;
 }
 
 #settings {
@@ -244,17 +251,17 @@ main {
   justify-content: space-between;
 }
 
-#message-user > h1,
-#settings > h1 {
-  flex: 0 1rem;
-}
-
 #settings-buttons {
   flex: 0 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .two-toggles {
   flex: 0 5rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .setting {
@@ -267,18 +274,7 @@ main {
   align-items: flex-start;
 }
 
-.two-toggles {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-}
-
 .toggle-setting {
-  display: flex;
-  justify-content: space-between;
-}
-
-#settings-buttons {
   display: flex;
   justify-content: space-between;
 }
