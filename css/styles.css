@@ -401,6 +401,10 @@ h1 {
   padding: 5px;
 }
 
+.toggle-setting p {
+  font-size: 12px;
+}
+
 /* ============================================= */
 /*              Base styles                      */
 /* ============================================= */
@@ -564,6 +568,13 @@ path {
   flex: 0 15rem;
 }
 
+.timezone-setting select {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 90%;
+  font-size: 12px;
+}
+
 #save-button {
   background: #CA2085;
 }
@@ -574,6 +585,8 @@ path {
 
 .toggle-switch {
   position: relative;
+  font-size: 12px;
+  padding: 10px;
 }
 
 .toggle-button {
@@ -590,8 +603,8 @@ path {
   display: inline-block;
   position: relative;
   background: white;
-  height: 0.1rem;
-  width: 0.1rem;
+  height: 0.7rem;
+  width: 0.7rem;
   right: 2px;
   bottom: 3px;
   border-radius: 50%;
@@ -599,6 +612,9 @@ path {
 }
 
 .toggle-status {
+  display: inline-block;
+  position: relative;
+  bottom: 3px;
   padding-top: 0;
   color: white;
   transition: all 0.2s ease-in-out;
@@ -616,7 +632,6 @@ path {
 /*              Grid System                      */
 /* ============================================= */
 body {
-  width: 90vw;
   margin: auto;
   display: grid;
   grid-template-rows: 50px 50px;
@@ -830,6 +845,19 @@ main {
 
 .toggle-button {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.two-toggles {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-setting {
+  display: flex;
+  justify-content: space-between;
 }
 
 #settings-buttons {

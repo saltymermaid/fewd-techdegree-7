@@ -116,6 +116,13 @@
   flex: 0 15rem;
 }
 
+.timezone-setting select {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 90%;
+  font-size: $font-size-small;
+}
+
 #save-button {
   background: $main-dark;
 }
