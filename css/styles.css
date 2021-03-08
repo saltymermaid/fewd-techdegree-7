@@ -520,6 +520,7 @@ path {
 .traffic-nav-link {
   margin: 5px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .traffic-nav-link.active {
