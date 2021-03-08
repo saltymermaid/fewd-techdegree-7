@@ -1,11 +1,11 @@
 let alert = document.querySelector('#alert');
-let banner = document.createElement('div');
 let navBar = document.querySelector('.main-nav');
 
-function makeAlert() {
+function makeAlert(alertMessage) {
+  let banner = document.createElement('div');
   banner.setAttribute('class', 'alert-banner');
   let alertText = document.createElement('p');
-  alertText.innerHTML = '<strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete';
+  alertText.innerHTML = alertMessage;
   let bannerClose = document.createElement('p');
   bannerClose.innerHTML = 'x';
   bannerClose.setAttribute('class', 'alert-banner-close');
@@ -14,13 +14,24 @@ function makeAlert() {
   alert.appendChild(banner);
 }
 
-makeAlert();
+makeAlert('<strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete');
 alert.addEventListener('click', e => {
   const element = e.target;
+  const selectedAlert = element.closest('.alert-banner');
   if (element.classList.contains("alert-banner-close")) {
-  alert.style.display = "none"
+  selectedAlert.style.display = "none";
   }
 });
+
+const notification = document.querySelector('#notification');
+notification.addEventListener('click', () => {
+  const bell = notification.querySelector('.badge');
+  if (bell.classList.contains('active')) {
+    makeAlert('You have a connection request!');
+    makeAlert('Someone liked your article!');
+    bell.classList.remove('active');
+  }
+})
 
 function createAndAddToElement(elem, attrib, details, adult) {
   let element = document.createElement(elem);
@@ -68,7 +79,7 @@ makeRecentActivity();
 const searchWrapper = document.querySelector('.search-input');
 const inputBox = searchWrapper.querySelector('input');
 const suggestionBox = searchWrapper.querySelector('.auto-com-box');
-const usersToSearch = []
+const usersToSearch = additionalUsersForSearch;
 fakeUsers.forEach(user => {
   usersToSearch.push(user.name);
 })
@@ -109,13 +120,13 @@ const message = document.querySelector('#message');
 const send = document.querySelector('#send-button');
 send.addEventListener('click', () => {
   if (user.value === '' && message.value === '') {
-  window.alert('Oooops! You need to fill out both the user and message fields before sending');
+  window.alert('Oooops! You need to fill out both the user and message fields before sending.');
   } else if (user.value === '' ) {
   window.alert('Uh oh! Who should the message go to?');
   } else if (message.value === '' ) {
-  window.alert('Please fill out message field before sending');
+  window.alert('Please fill out message field before sending.');
   } else {
-  window.alert(`Message successfully sent to: ${user.value}`);
+  window.alert(`Message successfully sent to: ${user.value}.`);
   }
   user.value = '';
   message.value = '';
@@ -164,7 +175,7 @@ settings.addEventListener('change', (e) => {
 
 function setTimeZone() {
   let tzSelect = document.querySelectorAll('#timezone > option');
-  let savedTz = localStorage.getItem('timezone');
+  let savedTz = localStorage.getItem('timezone') || '';
   tzSelect.forEach(tz => {
     tz.removeAttribute('selected');
     if (tz.value === savedTz) {

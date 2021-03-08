@@ -11,6 +11,10 @@
       "nav main";
   }
 
+  .profile-image {
+    border-left: 2px solid $main-dark;
+  }
+
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -23,9 +27,7 @@
   }
 
   .main-header {
-    grid-template-areas:
-      "tab search search"
-      "alert alert alert";
+    grid-template-columns: 1fr 3fr;
   }
 
   nav {
@@ -51,6 +53,11 @@
     flex-direction: column;
   }
 
+  .daily-container,
+  .mobile-container {
+    width: 45vw;
+  }
+
   #widget-row {
     flex-direction: row;
   }
@@ -62,8 +69,6 @@
 
 @media screen and (min-width: $screen-break-large) {
   .main-header {
-    grid-template-areas:
-      "tab search search search"
-      "alert alert alert alert";
+    grid-template-columns: 1fr 6fr;
   }
 }
