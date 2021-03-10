@@ -5,7 +5,7 @@
 body {
   margin: auto;
   display: grid;
-  grid-template-rows: 60px 50px;
+  grid-template-rows: 60px;
   grid-template-areas: 
     "top top"
     "nav nav"
@@ -19,6 +19,7 @@ nav {
 .nav {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .nav li {
@@ -154,10 +155,12 @@ main {
 
 .member-info {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  justify-items: center;
   grid-template-areas:
-    "profile name date"
-    "profile email date";
+    "profile"
+    "name"
+    "email"
+    "date";
   img {
     grid-area: profile;
   }
@@ -196,10 +199,11 @@ main {
 
 .activity-info {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  justify-items: center;
   grid-template-areas:
-    "profile activity arrow"
-    "profile time arrow";
+    "profile"
+    "activity"
+    "time";
   img {
     grid-area: profile;
   }
@@ -214,7 +218,7 @@ main {
 }
 
 .arrow {
-  grid-area: arrow;
+  display: none;
 }
 
 #message-user {

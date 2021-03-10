@@ -22,8 +22,10 @@
       "traffic traffic"
       "daily mobile"
       "social social"
-      "members recent"
-      "message settings";
+      "members"
+      "recent"
+      "message"
+      "settings";
   }
 
   .main-header {
@@ -50,6 +52,7 @@
   }
 
   .nav {
+    justify-content: flex-start;
     flex-direction: column;
   }
 
@@ -63,13 +66,54 @@
   }
 
   .widget {
-    flex: 0 1 250px;
+    flex: 0 1 200px;
     height: 125px;
+  }
+
+  .member-info {
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-items: initial;
+    grid-template-areas:
+      "profile name date"
+      "profile email date";
+  }
+
+  .activity-info {
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-items: initial;
+    grid-template-areas:
+      "profile activity arrow"
+      "profile time arrow";
+  }
+
+  .arrow {
+    display: initial;
+    grid-area: arrow;
+  }
+
+  #recent-activity img,
+  #new-members img {
+    height: 35px;
   }
 }
 
 @media screen and (min-width: $screen-break-large) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "traffic traffic"
+      "daily mobile"
+      "social social"
+      "members recent"
+      "message settings";
+  }
+  
   .main-header {
     grid-template-columns: 1fr 6fr;
+  }
+
+  .widget {
+    flex: 0 1 250px;
   }
 }

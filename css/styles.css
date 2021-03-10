@@ -684,7 +684,7 @@ path {
 body {
   margin: auto;
   display: grid;
-  grid-template-rows: 60px 50px;
+  grid-template-rows: 60px;
   grid-template-areas: "top top" "nav nav" "main main";
 }
 
@@ -695,6 +695,7 @@ nav {
 .nav {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .nav li {
@@ -818,8 +819,8 @@ main {
 
 .member-info {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  grid-template-areas: "profile name date" "profile email date";
+  justify-items: center;
+  grid-template-areas: "profile" "name" "email" "date";
 }
 .member-info img {
   grid-area: profile;
@@ -859,8 +860,8 @@ main {
 
 .activity-info {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  grid-template-areas: "profile activity arrow" "profile time arrow";
+  justify-items: center;
+  grid-template-areas: "profile" "activity" "time";
 }
 .activity-info img {
   grid-area: profile;
@@ -875,7 +876,7 @@ main {
 }
 
 .arrow {
-  grid-area: arrow;
+  display: none;
 }
 
 #message-user {
@@ -1037,7 +1038,7 @@ nav {
 #recent-activity img,
 #new-members img {
   border-radius: 50%;
-  height: 35px;
+  height: 75px;
   width: auto;
 }
 
@@ -1057,7 +1058,7 @@ nav {
 
   main {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members" "recent" "message" "settings";
   }
 
   .main-header {
@@ -1084,6 +1085,7 @@ nav {
   }
 
   .nav {
+    justify-content: flex-start;
     flex-direction: column;
   }
 
@@ -1097,13 +1099,44 @@ nav {
   }
 
   .widget {
-    flex: 0 1 250px;
+    flex: 0 1 200px;
     height: 125px;
+  }
+
+  .member-info {
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-items: initial;
+    grid-template-areas: "profile name date" "profile email date";
+  }
+
+  .activity-info {
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-items: initial;
+    grid-template-areas: "profile activity arrow" "profile time arrow";
+  }
+
+  .arrow {
+    display: initial;
+    grid-area: arrow;
+  }
+
+  #recent-activity img,
+#new-members img {
+    height: 35px;
   }
 }
 @media screen and (min-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members recent" "message settings";
+  }
+
   .main-header {
     grid-template-columns: 1fr 6fr;
+  }
+
+  .widget {
+    flex: 0 1 250px;
   }
 }
 
