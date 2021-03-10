@@ -244,8 +244,8 @@ main {
   flex: 0 2rem;
 }
 
-#message-user > h1, // first child of #message-user
-#settings > h1 {
+#message-user > h2, // first child of #message-user
+#settings > h2 {
   flex: 0 1rem;
 }
 
