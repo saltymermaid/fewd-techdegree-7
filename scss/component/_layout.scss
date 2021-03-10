@@ -3,7 +3,8 @@
 /* ============================================= */
 
 body {
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: 60px;
   grid-template-areas: 
@@ -88,6 +89,10 @@ main {
   grid-area: alert;
 }
 
+canvas {
+  max-width: 100%;
+}
+
 #traffic-div {
   grid-area: traffic;
 }
@@ -95,6 +100,8 @@ main {
 #traffic-header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .traffic-nav {
@@ -118,7 +125,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1rem;
 }
 
 .widget {

@@ -366,6 +366,10 @@ template {
 }
 
 h1 {
+  font-size: 20px;
+}
+
+h2 {
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -414,11 +418,6 @@ button {
 /* ============================================= */
 * {
   box-sizing: border-box;
-}
-
-html {
-  width: 100vw;
-  margin: 0;
 }
 
 main > div {
@@ -682,7 +681,8 @@ path {
 /*              Grid System                      */
 /* ============================================= */
 body {
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: 60px;
   grid-template-areas: "top top" "nav nav" "main main";
@@ -752,6 +752,10 @@ main {
   grid-area: alert;
 }
 
+canvas {
+  max-width: 100%;
+}
+
 #traffic-div {
   grid-area: traffic;
 }
@@ -759,6 +763,8 @@ main {
 #traffic-header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .traffic-nav {
@@ -782,7 +788,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1rem;
 }
 
 .widget {
@@ -899,8 +904,8 @@ main {
   flex: 0 2rem;
 }
 
-#message-user > h1,
-#settings > h1 {
+#message-user > h2,
+#settings > h2 {
   flex: 0 1rem;
 }
 
@@ -1001,6 +1006,7 @@ nav {
 }
 
 .traffic-nav {
+  padding-left: 0;
   list-style-type: none;
 }
 
@@ -1029,7 +1035,6 @@ nav {
 .daily-container,
 .mobile-container {
   height: 200px;
-  width: 95vw;
   margin: auto;
   padding: 0;
   position: relative;
@@ -1058,7 +1063,7 @@ nav {
 
   main {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members" "recent" "message" "settings";
+    grid-template-areas: "header header" "traffic traffic" "daily mobile" "social social" "members members" "recent recent" "message message" "settings settings";
   }
 
   .main-header {
@@ -1087,11 +1092,6 @@ nav {
   .nav {
     justify-content: flex-start;
     flex-direction: column;
-  }
-
-  .daily-container,
-.mobile-container {
-    width: 45vw;
   }
 
   #widget-row {

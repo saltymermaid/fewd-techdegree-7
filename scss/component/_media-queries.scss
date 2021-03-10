@@ -22,10 +22,10 @@
       "traffic traffic"
       "daily mobile"
       "social social"
-      "members"
-      "recent"
-      "message"
-      "settings";
+      "members members"
+      "recent recent"
+      "message message"
+      "settings settings";
   }
 
   .main-header {
@@ -54,11 +54,6 @@
   .nav {
     justify-content: flex-start;
     flex-direction: column;
-  }
-
-  .daily-container,
-  .mobile-container {
-    width: 45vw;
   }
 
   #widget-row {
